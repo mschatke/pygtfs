@@ -173,7 +173,7 @@ class Route(Base):
     trips = relationship("Trip", backref="route")
     fare_rules = relationship("FareRule", backref="route")
     
-    _validate_route_type = _validate_int_choice(range(8), 'route_type')
+    _validate_route_type = _validate_int_choice(range(1000), 'route_type')
 
     def __repr__(self):
         return '<Route %s: %s>' % (self.route_id, self.route_short_name)
